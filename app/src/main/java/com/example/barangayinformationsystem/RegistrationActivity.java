@@ -17,7 +17,11 @@ public class RegistrationActivity extends AppCompatActivity {
 
     ImageButton backImageButton;
     TextInputEditText birthDateTextInputEditText;
-
+    TextInputEditText firstNameTextInputEditText;
+    TextInputEditText lastNameTextInputEditText;
+    TextInputEditText usernameTextInputEditText;
+    TextInputEditText passwordTextInputEditText;
+    TextInputEditText confirmPasswordTextInputEditText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +48,11 @@ public class RegistrationActivity extends AppCompatActivity {
     private void initilizeComponents() {
         backImageButton = findViewById(R.id.backImageButton);
         birthDateTextInputEditText = findViewById(R.id.birthDateTextInputEditText);
+        firstNameTextInputEditText = findViewById(R.id.firstNameTextInputEditText);
+        lastNameTextInputEditText = findViewById(R.id.lastNameTextInputEditText);
+        usernameTextInputEditText = findViewById(R.id.usernameTextInputEditText);
+        passwordTextInputEditText = findViewById(R.id.passwordTextInputEditText);
+        confirmPasswordTextInputEditText = findViewById(R.id.confirmPasswordTextInputEditText);
     }
 
 }
