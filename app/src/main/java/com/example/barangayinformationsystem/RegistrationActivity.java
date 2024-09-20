@@ -16,7 +16,7 @@ import java.time.Year;
 public class RegistrationActivity extends AppCompatActivity {
 
     ImageButton backImageButton;
-    TextInputEditText birthDateTextInputEditText;//change 1
+    TextInputEditText birthDateTextInputEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,9 +30,9 @@ public class RegistrationActivity extends AppCompatActivity {
         DatePickerDialog datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-                birthDateTextInputEditText.setText(String.valueOf(day) + "/" + String.valueOf(month) + "/" + String.valueOf(year));
+                birthDateTextInputEditText.setText(String.valueOf(day) + "/" + String.valueOf(month + 1) + "/" + String.valueOf(year));
             }
-        }, 2024, 0, 18);
+        }, 2024, 1, 18);
 
         datePickerDialog.show();
     }
