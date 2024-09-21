@@ -9,17 +9,21 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.google.android.material.textfield.TextInputLayout;
+
 public class LogInActivity extends AppCompatActivity {
 
     TextView forgotPasswordTextView;
     TextView signUpTextView;
     ImageButton backImageButton;
+    TextInputLayout usernameTextInputLayout;
+    TextInputLayout passwordTextInputLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
         initializeComponents();
-        addUnderlineToForgotPasswordTextView();
+
     }
 
     public void goToRegisterActivity(View view) {
@@ -31,7 +35,7 @@ public class LogInActivity extends AppCompatActivity {
         finish();
     }
 
-    private void addUnderlineToForgotPasswordTextView() {
+    private void addUnderlineToTextView() {
 
         forgotPasswordTextView.setPaintFlags(forgotPasswordTextView.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
         signUpTextView.setPaintFlags(signUpTextView.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
@@ -43,6 +47,21 @@ public class LogInActivity extends AppCompatActivity {
         forgotPasswordTextView = findViewById(R.id.forgotPasswordTextView);
         signUpTextView = findViewById(R.id.signUpTextView);
         backImageButton = findViewById(R.id.backImageButton);
+        usernameTextInputLayout = findViewById(R.id.usernameTextInputLayout);
+        passwordTextInputLayout = findViewById(R.id.passwordTextInputLayout);
+
+        removeTextInputLayoutAnimation();
+        addUnderlineToTextView();
+
+    }
+
+    private void removeTextInputLayoutAnimation() {
+
+        usernameTextInputLayout.setHintAnimationEnabled(false);
+        usernameTextInputLayout.setHintEnabled(false);
+
+        passwordTextInputLayout.setHintAnimationEnabled(false);
+        passwordTextInputLayout.setHintEnabled(false);
 
     }
 }

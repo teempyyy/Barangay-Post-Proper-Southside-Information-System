@@ -10,6 +10,7 @@ import android.widget.DatePicker;
 import android.widget.ImageButton;
 
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 
 import java.time.Year;
 
@@ -22,6 +23,13 @@ public class RegistrationActivity extends AppCompatActivity {
     TextInputEditText usernameTextInputEditText;
     TextInputEditText passwordTextInputEditText;
     TextInputEditText confirmPasswordTextInputEditText;
+
+    TextInputLayout birthdateTextInputLayout;
+    TextInputLayout firstNameTextInputLayout;
+    TextInputLayout lastNameTextInputLayout;
+    TextInputLayout usernameTextInputLayout;
+    TextInputLayout passwordTextInputLayout;
+    TextInputLayout confirmPasswordTextInputLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,18 +49,52 @@ public class RegistrationActivity extends AppCompatActivity {
         datePickerDialog.show();
     }
 
-    public void back(View view) {//This function will take you back to the last activity
+    public void back(View view) {//This function will take the user back to the last activity
         finish();
     }
 
     private void initilizeComponents() {
+
         backImageButton = findViewById(R.id.backImageButton);
+
         birthDateTextInputEditText = findViewById(R.id.birthDateTextInputEditText);
         firstNameTextInputEditText = findViewById(R.id.firstNameTextInputEditText);
         lastNameTextInputEditText = findViewById(R.id.lastNameTextInputEditText);
         usernameTextInputEditText = findViewById(R.id.usernameTextInputEditText);
         passwordTextInputEditText = findViewById(R.id.passwordTextInputEditText);
         confirmPasswordTextInputEditText = findViewById(R.id.confirmPasswordTextInputEditText);
+
+        birthdateTextInputLayout = findViewById(R.id.birthDateTextInputLayout);
+        firstNameTextInputLayout = findViewById(R.id.firstNameTextInputLayout);
+        lastNameTextInputLayout = findViewById(R.id.lastNameTextInputLayout);
+        usernameTextInputLayout = findViewById(R.id.usernameTextInputLayout);
+        passwordTextInputLayout = findViewById(R.id.passwordTextInputLayout);
+        confirmPasswordTextInputLayout = findViewById(R.id.confirmPasswordTextInputLayout);
+
+        removeTextInputLayoutAnimation();
+
+    }
+
+    private void removeTextInputLayoutAnimation() {
+
+        firstNameTextInputLayout.setHintAnimationEnabled(false);
+        firstNameTextInputLayout.setHintEnabled(false);
+
+        lastNameTextInputLayout.setHintAnimationEnabled(false);
+        lastNameTextInputLayout.setHintEnabled(false);
+
+        usernameTextInputLayout.setHintAnimationEnabled(false);
+        usernameTextInputLayout.setHintEnabled(false);
+
+        birthdateTextInputLayout.setHintAnimationEnabled(false);
+        birthdateTextInputLayout.setHintEnabled(false);
+
+        passwordTextInputLayout.setHintAnimationEnabled(false);
+        passwordTextInputLayout.setHintEnabled(false);
+
+        confirmPasswordTextInputLayout.setHintAnimationEnabled(false);
+        confirmPasswordTextInputLayout.setHintEnabled(false);
+
     }
 
 }
